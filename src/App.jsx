@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './Header.jsx';
-import {AllCalls} from "./components/AllCalls.jsx";
+import {Activities} from "./components/Activities.jsx";
 
 import {Arch} from "./components/Arch.jsx";
 
@@ -14,7 +14,7 @@ const App = () => {
     <div className='container'>
 
         <Header setMode={mode=>updateMode(mode)}/>
-        {mode === "all"?<AllCalls/>:<Arch/>}
+        {mode === "all"?<Activities/>:<Arch/>}
     </div>
   );
 };
