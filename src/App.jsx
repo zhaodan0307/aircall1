@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from './Header.jsx';
 import {AllCalls} from "./components/AllCalls.jsx";
+import {Navigation} from "./components/Navigation.jsx";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Header/>
       <div className="container-view">Some activities should be here</div>
         <AllCalls/>
+        <Navigation/>
     </div>
   );
 };
