@@ -1,46 +1,38 @@
 import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
-function TabPanel(props) {
-    const { children, value, index} = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`full-width-tabpanel-${index}`}
-            aria-labelledby={`full-width-tab-${index}`}
-
-        >
-            {value === index && (
-                <Box >
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
+import {useEffect} from "react";
+import PhoneIcon from '@mui/icons-material/Phone';
 
 
-export const Navigation = () => {
-    const [value, setValue] = React.useState(0);
+
+
+export const Navigation = ({setMode}) => {
+    const [value, setValue] = React.useState("all");
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    useEffect(()=>setMode(value),[value])
+
     return(
         <Tabs
+            variant="fullWidth"
             value={value}
             onChange={handleChange}
-            textColor="secondary"
+            textColor="primary"
             indicatorColor="secondary"
-            aria-label="secondary tabs example"
+            aria-label="secondary tabs "
+            TabIndicatorProps={{
+                style: {
+                    backgroundColor: "green",
+                    
+                }
+            }}
         >
-            <Tab value="one" label="Item One" />
-            <Tab value="two" label="Item Two" />
-            <Tab value="three" label="Item Three" />
+            <Tab icon={<PhoneIcon />} iconPosition="start" value="all" label="All Calls" />
+            <Tab value="arch" label="Archived" />
         </Tabs>
     )
 }
