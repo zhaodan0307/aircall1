@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from './Header.jsx';
 import {AllCalls} from "./components/AllCalls.jsx";
-import {Navigation} from "./components/Navigation.jsx";
+
 import {Arch} from "./components/Arch.jsx";
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
 
   return (
     <div className='container'>
-        <Header/>
-        <Navigation setMode={mode=>updateMode(mode)}/>
+
+        <Header setMode={mode=>updateMode(mode)}/>
         {mode === "all"?<AllCalls/>:<Arch/>}
     </div>
   );
