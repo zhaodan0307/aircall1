@@ -1566,7 +1566,7 @@
     "invariant" "^2.2.2"
     "semver" "^5.3.0"
 
-"babel-preset-es2015@^6.0.15":
+"babel-preset-es2015@^6.24.1":
   "integrity" "sha512-XfwUqG1Ry6R43m4Wfob+vHbIVBIqTg/TJY4Snku1iIzeH7mUnwHA8Vagmv+ZQbPwhS8HgsdQvy28Py3k5zpoFQ=="
   "resolved" "https://registry.npmjs.org/babel-preset-es2015/-/babel-preset-es2015-6.24.1.tgz"
   "version" "6.24.1"

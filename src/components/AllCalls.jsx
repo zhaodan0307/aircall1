@@ -1,17 +1,19 @@
 
 import * as React from 'react';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import {GET_CAll_URL} from "../helper";
+require("babel-core/register");
+require("babel-polyfill");
 
 export const AllCalls = () =>
 {
-    let callList = []
-    useEffect( () => {
-         axios.get(GET_CAll_URL)
+    const [list,setList] = useState([])
+    useEffect( async () => {
+        await axios.get(GET_CAll_URL)
             .then(
                 res => {
-                    callList = [...res]
+                    setList( [...res])
                 }
             ).catch(
                 err => console.log(err)
